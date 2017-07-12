@@ -1,0 +1,41 @@
+{
+  "name": "jesy",
+  "version": "0.0.0",
+  "description": "Apply calcify on JSON file.",
+  "main": "jesy.js",
+  "scripts": {
+    "test": "mocha jesy-test.js"
+  },
+  "bin": {
+    "jesy": "run.js"
+  },
+  "option": {
+    "shell": "jesy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/volkovasystems/jesy.git"
+  },
+  "keywords": [
+    "apply",
+    "calcify",
+    "json",
+    "file",
+    "jesy"
+  ],
+  "author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/volkovasystems/jesy/issues"
+  },
+  "homepage": "https://github.com/volkovasystems/jesy#readme",
+  "dependencies": {
+    "depher": "^0.36.0",
+    "falzy": "^0.20.0",
+    "jersy": "^0.12.0",
+    "persy": "^0.15.0",
+    "shft": "^0.4.0",
+    "yargs": "^8.0.2",
+    "zelf": "^0.12.0"
+  }
+}
