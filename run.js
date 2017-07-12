@@ -47,12 +47,14 @@
 
 	@include:
 		{
+			"glob": "glob",
 			"path": "path",
 			"yargs": "yargs"
 		}
 	@end-include
 */
 
+const glob = require( "glob" );
 const path = require( "path" );
 const yargs = require( "yargs" );
 
@@ -67,14 +69,14 @@ const parameter = yargs
 	.usage( `Usage: ${ package.option.shell } apply <file>` )
 
 	.command( "apply <file>",
-		"Read, calcify and persist the JSON file." )
+		"Read, calcify and persist the JSON file. Supports pattern matching." )
 
 	.demand( 1, [ "file" ] )
 
 	.example( "$0 apply ./package.json",
 		"Read, calcify and persist the './package.json' file." )
 
-	.coerce( "file", ( file ) => path.resolve( process.cwd( ), file ) )
+	.coerce( "file", ( file ) => glob.sync( file ) )
 
 	.help( "help" )
 
@@ -88,4 +90,4 @@ const parameter = yargs
 
 	.argv;
 
-jesy( parameter.file, true );
+parameter.file.forEach( ( file ) => jesy( file, true ) );
